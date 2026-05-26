@@ -1,7 +1,7 @@
 [package]
-name = "hello_world"
-type = "bin"
+name = "noir_circuit_library"
+type = "lib"
 authors = ["StationaryDev37"]
-compiler_version = ">=0.18.0"
+compiler_version = ">=0.1.0"
 
 [dependencies]
