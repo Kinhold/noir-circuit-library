@@ -11,3 +11,9 @@
 **Technical Progress:** Wrote and integrated seven ZK modules (Merkle, Nullifier, Auth, Range, DEX Match, HTLC, State). Linked via `lib.nr`.
 **Blockers/Bugs:** Awaiting `nargo check` verification.
 **Next Steps:** Compile and write tests for the DEX matching logic.
+
+## Entry 003: Repository Hardening
+**Objective:** Prevent artifact tracking and establish testing standards.
+**Technical Progress:** Added `.gitignore` for Nargo artifacts. Implemented `tests.nr` with passing and failing constraint checks for the liquidity range primitive.
+**Blockers/Bugs:** None. 
+**Next Steps:** Execute `nargo test` to verify constraint logic locally.

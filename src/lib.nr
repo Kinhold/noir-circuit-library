@@ -5,3 +5,4 @@ mod range;
 mod dex_match;
 mod htlc;
 mod state;
+mod tests;
