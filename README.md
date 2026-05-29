@@ -36,3 +36,18 @@ nargo test
 
 ---
 *Developed and maintained entirely via mobile terminal infrastructure.*
+
+## 🏆 The First Mobile Prover (May 28, 2026)
+
+This repository serves as a historical proof-of-concept. The metrics below represent the first documented instance of a full Barretenberg Ultra Honk proof being generated and verified natively on an Android mobile CPU. No cloud provers. No remote execution. Just raw, optimized ZK on a consumer device.
+
+**Target Hardware:** Motorola Moto G (Android) via proot-distro/Termux
+**Toolchain:** nargo 1.0.0-beta.21 + bb 5.0.0-nightly.20260324
+
+| Pipeline Stage | Execution Time |
+| --- | --- |
+| **Witness Generation (`nargo execute`)** | 452 ms |
+| **Ultra Honk Proving (`bb prove`)** | 500 ms |
+| **Proof Verification (`bb verify`)** | 170 ms |
+
+*Raw telemetry and execution logs are available in the repository.*
