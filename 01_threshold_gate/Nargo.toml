@@ -1,7 +1,0 @@
-[package]
-name = "threshold_gate"
-type = "bin"
-authors = ["StationaryDev37"]
-compiler_version = ">=0.18.0"
-
-[dependencies]

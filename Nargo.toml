@@ -3,3 +3,4 @@ name = "noir_circuit_library"
 authors = ["AztecDev"]
 compiler_version = "1.0.0"
 type = "lib"
+
