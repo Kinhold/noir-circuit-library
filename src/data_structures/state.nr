@@ -10,15 +10,11 @@ pub struct StateTransition {
 }
 
 pub fn verify_transition(transition: StateTransition) {
-    // Reconstruct the new state from the old state + variables
-    // In a real rollup, this proves the state advanced correctly
-    let computed_new_state = poseidon::hash([
-        transition.old_state_hash,
-        transition.state_variables[0],
-        transition.state_variables[1],
-        transition.state_variables[2],
-        transition.state_variables[3]
-    ]);
+    // Chain hashes to safely bypass any 5-element arity limits in beta.21
+    let h1 = poseidon::hash([transition.old_state_hash, transition.state_variables[0]]);
+    let h2 = poseidon::hash([h1, transition.state_variables[1]]);
+    let h3 = poseidon::hash([h2, transition.state_variables[2]]);
+    let computed_new_state = poseidon::hash([h3, transition.state_variables[3]]);
     
     assert(computed_new_state == transition.new_state_hash);
 }
