@@ -1,4 +1,4 @@
-use std::hash::poseidon;
+use poseidon;
 
 pub fn verify_htlc(
     preimage: Field,

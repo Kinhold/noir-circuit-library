@@ -1,4 +1,4 @@
-use std::hash::poseidon;
+use poseidon;
 
 pub fn encrypt_note(
     amount: Field,

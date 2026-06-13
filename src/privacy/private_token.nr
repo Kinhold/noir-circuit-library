@@ -1,4 +1,4 @@
-use std::hash::poseidon;
+use poseidon;
 use crate::data_structures::indexed_merkle::{IndexedMerkleProof, verify_non_membership};
 
 pub struct Note {

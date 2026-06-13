@@ -1,4 +1,4 @@
-use std::hash::poseidon;
+use poseidon;
 
 pub struct IndexedMerkleProof<let DEPTH: u32> {
     pub low_leaf_value: Field,

@@ -1,4 +1,4 @@
-use std::hash::poseidon;
+use poseidon;
 
 pub struct StateTransition {
     pub old_state_hash: Field,

@@ -1,4 +1,4 @@
-use std::hash::poseidon;
+use poseidon;
 
 pub struct PlumeSignal {
     pub nullifier_x: Field,
