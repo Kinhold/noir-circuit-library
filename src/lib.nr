@@ -1,3 +1,3 @@
-mod data_structures;
-mod privacy;
-mod defi;
+pub mod data_structures;
+pub mod privacy;
+pub mod defi;

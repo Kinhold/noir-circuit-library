@@ -1,7 +1,4 @@
-// Private State Transition Logic
-// Target: nargo 1.0.0-beta.21
-
-use dep::std::hash::poseidon;
+use std::hash::poseidon;
 
 pub struct StateTransition {
     pub old_state_hash: Field,
@@ -10,7 +7,6 @@ pub struct StateTransition {
 }
 
 pub fn verify_transition(transition: StateTransition) {
-    // Chain hashes to safely bypass any 5-element arity limits in beta.21
     let h1 = poseidon::hash([transition.old_state_hash, transition.state_variables[0]]);
     let h2 = poseidon::hash([h1, transition.state_variables[1]]);
     let h3 = poseidon::hash([h2, transition.state_variables[2]]);

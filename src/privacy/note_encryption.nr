@@ -1,7 +1,4 @@
-// ECIES-style Note Encryption stream
-// Target: nargo 1.0.0-beta.21
-
-use dep::std::hash::poseidon;
+use std::hash::poseidon;
 
 pub fn encrypt_note(
     amount: Field,

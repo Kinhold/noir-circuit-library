@@ -1,5 +1,5 @@
-mod note_encryption;
-mod private_token;
-mod plume;
-mod range;
-mod auth;
+pub mod note_encryption;
+pub mod private_token;
+pub mod plume;
+pub mod range;
+pub mod auth;

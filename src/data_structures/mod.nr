@@ -1,2 +1,2 @@
-mod indexed_merkle;
-mod state;
+pub mod indexed_merkle;
+pub mod state;

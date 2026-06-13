@@ -1,7 +1,4 @@
-// Schnorr Authentication Wrapper
-// Target: nargo 1.0.0-beta.21
-
-use dep::std;
+use std::schnorr;
 
 pub fn verify_auth(
     pub_key_x: Field,
@@ -9,6 +6,6 @@ pub fn verify_auth(
     signature: [Field; 64],
     message: [u8; 32]
 ) {
-    let valid = std::schnorr::verify_signature(pub_key_x, pub_key_y, signature, message);
+    let valid = schnorr::verify_signature(pub_key_x, pub_key_y, signature, message);
     assert(valid);
 }

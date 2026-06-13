@@ -1,7 +1,4 @@
-// Hash Time-Locked Contracts (HTLC) for atomic swaps
-// Target: nargo 1.0.0-beta.21
-
-use dep::std::hash::poseidon;
+use std::hash::poseidon;
 
 pub fn verify_htlc(
     preimage: Field,

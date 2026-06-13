@@ -1,3 +1,3 @@
-mod fixed_point;
-mod htlc;
-mod dex_match;
+pub mod fixed_point;
+pub mod htlc;
+pub mod dex_match;
