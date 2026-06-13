@@ -1,4 +1,4 @@
-use schnorr;
+use std::schnorr;
 
 pub fn verify_auth(
     pub_key_x: Field,

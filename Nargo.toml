@@ -2,8 +2,4 @@
 name = "noir_circuit_library"
 type = "lib"
 authors = ["StationaryDev37"]
-compiler_version = "1.0.0"
-
-[dependencies]
-poseidon = { git = "https://github.com/noir-lang/poseidon", tag = "v0.1.1" }
-schnorr = { git = "https://github.com/noir-lang/schnorr", tag = "v0.1.0" }
+compiler_version = ">=0.1.0"
