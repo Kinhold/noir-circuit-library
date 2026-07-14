@@ -1,5 +1,3 @@
-use std::hash::poseidon;
-
 pub struct IndexedMerkleProof<let DEPTH: u32> {
     pub low_leaf_value: Field,
     pub low_leaf_next_value: Field,
@@ -17,7 +15,7 @@ pub fn verify_non_membership<let DEPTH: u32>(
     let is_end = proof.low_leaf_next_value == 0;
     assert(is_end | (nullifier as u64 < proof.low_leaf_next_value as u64));
 
-    let low_leaf_hash = std::hash::poseidon::hash([
+    let low_leaf_hash = std::hash::pedersen_hash([
         proof.low_leaf_value, 
         proof.low_leaf_next_index, 
         proof.low_leaf_next_value, 
@@ -32,9 +30,9 @@ pub fn verify_non_membership<let DEPTH: u32>(
         let sibling = proof.low_path[i];
         
         if is_right {
-            current_hash = std::hash::poseidon::hash([sibling, current_hash]);
+            current_hash = std::hash::pedersen_hash([sibling, current_hash]);
         } else {
-            current_hash = std::hash::poseidon::hash([current_hash, sibling]);
+            current_hash = std::hash::pedersen_hash([current_hash, sibling]);
         }
         index >>= 1;
     }

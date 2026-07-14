@@ -1,5 +1,3 @@
-use std::hash::poseidon;
-
 pub fn verify_htlc(
     preimage: Field,
     hash_lock: Field,
@@ -10,7 +8,7 @@ pub fn verify_htlc(
     if is_timeout_claim {
         assert(current_time >= time_lock);
     } else {
-        let computed_hash = std::hash::poseidon::hash([preimage]);
+        let computed_hash = std::hash::pedersen_hash([preimage]);
         assert(computed_hash == hash_lock);
     }
 }

@@ -1,4 +1,3 @@
-use std::hash::poseidon;
 use crate::data_structures::indexed_merkle::{IndexedMerkleProof, verify_non_membership};
 
 pub struct Note {
@@ -9,13 +8,13 @@ pub struct Note {
 }
 
 pub fn compute_note_commitment(note: Note) -> Field {
-    let h1 = std::hash::poseidon::hash([note.amount, note.secret]);
-    let h2 = std::hash::poseidon::hash([note.owner_pubkey_x, note.owner_pubkey_y]);
-    std::hash::poseidon::hash([h1, h2])
+    let h1 = std::hash::pedersen_hash([note.amount, note.secret]);
+    let h2 = std::hash::pedersen_hash([note.owner_pubkey_x, note.owner_pubkey_y]);
+    std::hash::pedersen_hash([h1, h2])
 }
 
 pub fn compute_nullifier(note_commitment: Field, private_key: Field) -> Field {
-    std::hash::poseidon::hash([note_commitment, private_key])
+    std::hash::pedersen_hash([note_commitment, private_key])
 }
 
 pub fn prove_transfer<let DEPTH: u32>(

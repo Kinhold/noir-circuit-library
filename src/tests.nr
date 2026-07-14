@@ -1,5 +1,7 @@
 use crate::range::verify_liquidity;
 
+mod integration_tests;
+
 #[test]
 fn test_valid_liquidity_range() {
     // Validates a balance sits within the bracket
