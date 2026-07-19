@@ -1,0 +1,6 @@
+[package]
+name = "noir_circuit_library"
+type = "lib"
+authors = ["Kinhold"]
+# Nargo rejects prerelease values in `compiler_version`; CI is the
+# authoritative pin for the supported v1.0.0-beta.21 toolchain.
